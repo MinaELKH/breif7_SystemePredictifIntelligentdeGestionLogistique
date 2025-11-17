@@ -1,0 +1,39 @@
+services:
+  # MongoDB service
+  mongodb:
+    image: mongo:7.0
+    container_name: dataflow-insight-mongo
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: dataflow_insight
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - dataflow-insight-net
+
+  # Jupyter with PySpark
+  jupyter:
+    build: .
+    container_name: dataflow-insight-jupyter
+    ports:
+      - "8888:8888"
+      - "4041:4040"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - GRANT_SUDO=yes
+    volumes:
+      - ./data:/home/jovyan/work/data
+      - ./load.ipynb:/home/jovyan/work/load.ipynb
+      - ./notebooks:/home/jovyan/work/notebooks
+    depends_on:
+      - mongodb
+    networks:
+      - dataflow-insight-net
+
+volumes:
+  mongodb_data:
+
+networks:
+  dataflow-insight-net:
+    driver: bridge
