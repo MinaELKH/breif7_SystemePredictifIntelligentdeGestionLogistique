@@ -1,0 +1,23 @@
+{
+    "model_type": "LogisticRegression",
+    "feature_numeric_cols": [
+        "Days for shipment (scheduled)",
+        "Benefit per order",
+        "Sales per customer",
+        "Order Item Discount",
+        "Order Item Discount Rate",
+        "Order Item Product Price",
+        "Order Item Profit Ratio",
+        "Order Item Quantity",
+        "Sales",
+        "Order Profit Per Order"
+    ],
+    "feature_categorical_cols": [
+        "Type",
+        "Shipping Mode",
+        "Market",
+        "Customer Segment",
+        "Order Region",
+        "Category Name"
+    ]
+}

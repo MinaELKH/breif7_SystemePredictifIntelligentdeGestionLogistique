@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.StringIndexerModel","timestamp":1763545404002,"sparkVersion":"4.0.1","uid":"StringIndexer_4625b81df647","paramMap":{"handleInvalid":"keep","outputCol":"Customer Segment_idx","inputCol":"Customer Segment"},"defaultParamMap":{"handleInvalid":"error","stringOrderType":"frequencyDesc","outputCol":"StringIndexer_4625b81df647__output"}}
